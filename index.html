@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAG - Cadastro de Motorista</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Cadastro de Motorista Autônomo</h2>
+
+    <form id="form-motorista">
+      
+      <div class="foto-container">
+        <div class="avatar-preview">
+          <img id="preview" src="https://via.placeholder.com/130?text=Foto" alt="Foto de Perfil">
+        </div>
+        <label for="foto" class="btn-foto">Carregar Foto</label>
+        <input type="file" id="foto" accept="image/*" onchange="mostrarPreview(event)">
+      </div>
+
+     
+      <div class="campo">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <div class="campo">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" min="18" placeholder="Ex: 25" required>
+      </div>
+
+      
+      <div class="campo-grupo">
+        <div class="campo flex-3">
+          <label for="rua">Rua / Avenida</label>
+          <input type="text" id="rua" placeholder="Rua..." required>
+        </div>
+        <div class="campo flex-1">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" placeholder="Nº" required>
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" placeholder="Bairro" required>
+        </div>
+        <div class="campo">
+          <label for="cidade">Cidade / UF</label>
+          <input type="text" id="cidade" placeholder="Ex: São Paulo / SP" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="certificados">Certificados / Cursos</label>
+        <textarea id="certificados" rows="3" placeholder="Ex: EAR, Direção Defensiva, MOPP..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-salvar">Salvar Cadastro</button>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
