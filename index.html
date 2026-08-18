@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WAG - Cadastro de Motorista</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>WAG - Web Autogestão | Instrutores de Trânsito</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
+  <header class="navbar">
+    <div class="container navbar-content">
+      <div class="logo">
+        <a href="#">
+          <span class="logo-bold">Web</span> <span class="logo-sub"> Autogestão</span>
+        </a>
+      </div>
 
-  <div class="container">
-    <h2>Cadastro de Motorista Autônomo</h2>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#buscar"><span class="nav-code"></span> Buscar Instrutor</a></li>
+          <li><a href="https://www.detran.df.gov.br/" target="_blank" class="link-cnh"><span class="nav-code"></span> CNH do Brasil </a></li>
+          <li><a href="#como-funciona"><span class="nav-code"></span> Como Funciona</a></li>
+        </ul>
+      </nav>
 
-    <form id="form-motorista">
+      <div class="nav-actions">
+        <a href="#login" class="btn btn-outline">Entrar</a>
+        <a href="#cadastro" class="btn btn-primary">Cadastrar-se</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main-content">
+  
+    <section class="hero">
       
-      <div class="foto-container">
-        <div class="avatar-preview">
-          <img id="preview" src="https://via.placeholder.com/130?text=Foto" alt="Foto de Perfil">
-        </div>
-        <label for="foto" class="btn-foto">Carregar Foto</label>
-        <input type="file" id="foto" accept="image/*" onchange="mostrarPreview(event)">
-      </div>
+    </section>
+  </main>
 
-     
-      <div class="campo">
-        <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" placeholder="Digite seu nome completo" required>
-      </div>
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.navbar');
+      const navLinks = document.querySelectorAll('.nav-menu a');
 
-      <div class="campo">
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" min="18" placeholder="Ex: 25" required>
-      </div>
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(7, 9, 19, 0.95)';
+          navbar.style.borderBottomColor = 'var(--neon-cyan)';
+          navbar.style.boxShadow = '0 0 20px rgba(0, 240, 255, 0.2)';
+        } else {
+          navbar.style.background = 'var(--bg-card)';
+          navbar.style.borderBottomColor = 'var(--border-neon)';
+          navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        }
+      });
 
-      
-      <div class="campo-grupo">
-        <div class="campo flex-3">
-          <label for="rua">Rua / Avenida</label>
-          <input type="text" id="rua" placeholder="Rua..." required>
-        </div>
-        <div class="campo flex-1">
-          <label for="numero">Número</label>
-          <input type="text" id="numero" placeholder="Nº" required>
-        </div>
-      </div>
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          link.style.letterSpacing = '2px';
+        });
 
-      <div class="campo-grupo">
-        <div class="campo">
-          <label for="bairro">Bairro</label>
-          <input type="text" id="bairro" placeholder="Bairro" required>
-        </div>
-        <div class="campo">
-          <label for="cidade">Cidade / UF</label>
-          <input type="text" id="cidade" placeholder="Ex: São Paulo / SP" required>
-        </div>
-      </div>
+        link.addEventListener('mouseleave', () => {
+          link.style.letterSpacing = '1px';
+        });
+      });
 
-      <div class="campo">
-        <label for="certificados">Certificados / Cursos</label>
-        <textarea id="certificados" rows="3" placeholder="Ex: EAR, Direção Defensiva, MOPP..."></textarea>
-      </div>
-
-      <button type="submit" class="btn-salvar">Salvar Cadastro</button>
-    </form>
-  </div>
-
-  <script src="js/script.js"></script>
+      console.log('%c [WAG SYSTEM ONLINE] %c Interface Front-end Inicializada...', 
+        'background: #00f0ff; color: #070913; font-weight: bold; padding: 4px;', 
+        'color: #ffb703; font-weight: bold;'
+      );
+    });
+  </script>
 </body>
 </html>
