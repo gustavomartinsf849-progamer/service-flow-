@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAG - Web Autogestão | Instrutores de Trânsito</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <header class="navbar">
+    <div class="container navbar-content">
+      <div class="logo">
+        <a href="#">
+          <span class="logo-bold">Web</span> <span class="logo-sub"> Autogestão</span>
+        </a>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#buscar"><span class="nav-code"></span> Buscar Instrutor</a></li>
+          <li><a href="https://www.detran.df.gov.br/" target="_blank" class="link-cnh"><span class="nav-code"></span> CNH do Brasil </a></li>
+          <li><a href="#como-funciona"><span class="nav-code"></span> Como Funciona</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#login" class="btn btn-outline">Entrar</a>
+        <a href="#cadastro" class="btn btn-primary">Cadastrar-se</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main-content">
+  
+    <section class="hero">
+      
+    </section>
+  </main>
+
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.navbar');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(7, 9, 19, 0.95)';
+          navbar.style.borderBottomColor = 'var(--neon-cyan)';
+          navbar.style.boxShadow = '0 0 20px rgba(0, 240, 255, 0.2)';
+        } else {
+          navbar.style.background = 'var(--bg-card)';
+          navbar.style.borderBottomColor = 'var(--border-neon)';
+          navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          link.style.letterSpacing = '2px';
+        });
+
+        link.addEventListener('mouseleave', () => {
+          link.style.letterSpacing = '1px';
+        });
+      });
+
+      console.log('%c [WAG SYSTEM ONLINE] %c Interface Front-end Inicializada...', 
+        'background: #00f0ff; color: #070913; font-weight: bold; padding: 4px;', 
+        'color: #ffb703; font-weight: bold;'
+      );
+    });
+  </script>
+</body>
+</html>
